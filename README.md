@@ -46,9 +46,15 @@ Note: the blocker test uses synthetic marker signals, not real exploits against 
 
 Even with full UI source, full public API documentation, and a fully decompiled app, an attacker agent must still lack all of these at the same time: a non exportable private key in secure hardware, a fresh server attestation, a transaction signature bound to amount and payee, and a risk approval from the server. If any one is missing, money does not move.
 
-## What this project is not
+## Not only a demo: built for real financial services, when implemented properly
 
-This is a demo and research codebase, not a certified banking product. It does not contain real bank code, real customer data, real secrets, or real keys. All keys and tokens in tests are demo values only.
+This repo ships as a demo and research codebase, with demo values only in its tests, so anyone can run it and check the gate logic without real bank code, real customer data, real secrets, or real keys.
+
+That demo form is not the limit of the project. This is also a production oriented design for real financial services, when it is implemented properly in a real service. The gate is stack independent, it works as a sidecar proxy or middleware in front of finance routes, it uses the same decision rules across Python, Java Spring, Node, Go, .NET, PHP, Ruby, Rust, mobile, and web, and it is meant to sit in front of real money routes, not only in a classroom example.
+
+When implemented in a real financial service, it works well because money logic stays on the server, behind the gate, with hardware security modules and tokenization, with Redis for nonce, rate, and traffic window state, with an audit queue and alerts, and with a risk service for device and transaction scoring. The gate itself is the front door. It does not replace server authority, and a real deployment must still connect those production pieces, do its own threat modelling, do permission based penetration testing and code review, and complete its own compliance review.
+
+What this project is not, even in a real deployment: it is not a certified banking product on its own, and copying this repo alone does not make a service compliant. A bank must do the production work listed above before using any part of this code in production.
 Do not test this against a real bank app or website without written permission from that bank. Test only on apps you own or have written permission to test.
 A gate cannot stop a human who voluntarily gives away a passkey, or an insider with legitimate access who abuses it. Those need limits, dual approval, anomaly detection, and human review behind the gate.
 
