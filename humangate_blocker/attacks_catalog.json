@@ -1,0 +1,2282 @@
+[
+  {
+    "id": 1,
+    "name": "Broken Access Control",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 2,
+    "name": "Cryptographic Failure",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 3,
+    "name": "Injection Attack",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 4,
+    "name": "Insecure Design",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 5,
+    "name": "Security Misconfiguration",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 6,
+    "name": "Vulnerable And Outdated Components",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 7,
+    "name": "Identification And Authentication Failure",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 8,
+    "name": "Software And Data Integrity Failure",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 9,
+    "name": "Security Logging And Monitoring Failure",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 10,
+    "name": "Server Side Request Forgery",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 11,
+    "name": "Stored Cross Site Scripting",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 12,
+    "name": "Reflected Cross Site Scripting",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 13,
+    "name": "Cross Site Request Forgery",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 14,
+    "name": "Clickjacking",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 15,
+    "name": "Open Redirect",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 16,
+    "name": "Directory Traversal",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 17,
+    "name": "File Inclusion",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 18,
+    "name": "Command Injection",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 19,
+    "name": "LDAP Injection",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 20,
+    "name": "XML External Entity Attack",
+    "category": "Web Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "injection_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 10,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate pattern block plus server input validation plus output encoding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 21,
+    "name": "Broken Object Level Authorization",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 22,
+    "name": "Broken User Authentication API",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 23,
+    "name": "Excessive Data Exposure",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 24,
+    "name": "Lack Of Rate Limiting API",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 25,
+    "name": "Broken Function Level Authorization",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 26,
+    "name": "Mass Assignment API",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 27,
+    "name": "Security Misconfiguration API",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 28,
+    "name": "Injection API",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 29,
+    "name": "Improper Inventory Management",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 30,
+    "name": "Unsafe Consumption Of APIs",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 31,
+    "name": "API Enumeration",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 32,
+    "name": "API Token Leakage",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 33,
+    "name": "API Replay Attack",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 34,
+    "name": "API Version Abuse",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 35,
+    "name": "GraphQL Abuse",
+    "category": "API",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "api_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 120,
+      "api_coverage_percent": 90
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus server authorization check per object plus rate limit plus token binding",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 36,
+    "name": "Improper Platform Usage",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 37,
+    "name": "Insecure Data Storage",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 38,
+    "name": "Insecure Communication Mobile",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 39,
+    "name": "Insecure Authentication Mobile",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 40,
+    "name": "Insufficient Cryptography Mobile",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 41,
+    "name": "Insecure Authorization Mobile",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 42,
+    "name": "Client Code Quality Issue",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 43,
+    "name": "Code Tampering",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 44,
+    "name": "Reverse Engineering Mobile",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 45,
+    "name": "Extraneous Functionality",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 46,
+    "name": "Root And Jailbreak Bypass",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 47,
+    "name": "Overlay Attack",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 48,
+    "name": "Keylogging Mobile",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 49,
+    "name": "Screen Capture Attack",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 50,
+    "name": "Sideloaded APK Attack",
+    "category": "Mobile Application",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "mobile_tamper_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": false,
+      "requests_per_minute": 20,
+      "api_coverage_percent": 20
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus device attestation plus app integrity plus secure storage plus certificate pinning",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 51,
+    "name": "Credential Stuffing",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 52,
+    "name": "Brute Force Password",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 53,
+    "name": "Password Spraying",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 54,
+    "name": "Session Hijacking",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 55,
+    "name": "Session Fixation",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 56,
+    "name": "Token Theft",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 57,
+    "name": "OTP Interception SMS",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 58,
+    "name": "SIM Swap Attack",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 59,
+    "name": "Push Fatigue Attack",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 60,
+    "name": "MFA Bypass",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 61,
+    "name": "Passkey Downgrade Attack",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 62,
+    "name": "Account Enumeration",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 63,
+    "name": "Password Reuse Attack",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 64,
+    "name": "Cookie Theft",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 65,
+    "name": "Refresh Token Abuse",
+    "category": "Authentication And Session",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "auth_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 200,
+      "api_coverage_percent": 10
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus passkey plus device binding plus short lived tokens plus risk step up",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 66,
+    "name": "Prompt Injection Direct",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 67,
+    "name": "Indirect Prompt Injection",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 68,
+    "name": "Tool Poisoning",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 69,
+    "name": "Excessive Agency",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 70,
+    "name": "System Prompt Leakage",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 71,
+    "name": "Model Extraction",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 72,
+    "name": "Training Data Poisoning",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 73,
+    "name": "RAG Poisoning",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 74,
+    "name": "Vector Embedding Attack",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 75,
+    "name": "Unbounded Consumption",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 76,
+    "name": "Agent Tool Misuse",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 77,
+    "name": "Filesystem Capability Laundering",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 78,
+    "name": "MCP Server Abuse",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 79,
+    "name": "Agent Memory Leakage",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 80,
+    "name": "Agent Collusion",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 81,
+    "name": "Model Jailbreak",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 82,
+    "name": "Data Exfiltration Via Agent",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 83,
+    "name": "Agent Replay Attack",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 84,
+    "name": "Shadow AI Data Leak",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 85,
+    "name": "AI Reverse Engineering REA Style",
+    "category": "AI Agent",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "agent_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 150,
+      "api_coverage_percent": 95
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus AgentGuard plus narrow tools plus human approval plus audit log",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 86,
+    "name": "Phishing Bank",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 87,
+    "name": "Vishing Call Fraud",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 88,
+    "name": "Smishing SMS Fraud",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 89,
+    "name": "Authorized Push Payment Scam",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 90,
+    "name": "Mule Account Transfer",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 91,
+    "name": "First Time Beneficiary Fraud",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 92,
+    "name": "Cross Border Fraud",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 93,
+    "name": "Card Not Present Fraud",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 94,
+    "name": "Card Skimming And Clone",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 95,
+    "name": "NFC Relay Attack",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 96,
+    "name": "Transaction Hijacking",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 97,
+    "name": "Man In Browser Attack",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 98,
+    "name": "Man In Middle Attack",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 99,
+    "name": "Synthetic Identity Fraud",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 100,
+    "name": "Account Opening Fraud",
+    "category": "Banking Fraud And Transaction",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "fraud_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": true,
+      "is_headless": false,
+      "requests_per_minute": 5,
+      "api_coverage_percent": 5
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus transaction signature bound to amount and payee plus first payee delay plus risk warning plus out of band confirmation",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 101,
+    "name": "Supply Chain Package Compromise",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 102,
+    "name": "Dependency Confusion",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 103,
+    "name": "Malicious SDK",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 104,
+    "name": "Insider Data Theft",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 105,
+    "name": "Privilege Escalation Internal",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 106,
+    "name": "Cloud Misconfiguration",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 107,
+    "name": "Secrets In Repository",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 108,
+    "name": "CI Pipeline Abuse",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 109,
+    "name": "Application Layer DDoS",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 110,
+    "name": "Network DDoS",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 111,
+    "name": "DNS Hijacking",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 112,
+    "name": "Ransomware Device",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 113,
+    "name": "Ransomware Server",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 114,
+    "name": "Data Breach Exfiltration",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 115,
+    "name": "Insider Agent Misuse",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 116,
+    "name": "Third Party Vendor Breach",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 117,
+    "name": "Log Tampering",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 118,
+    "name": "Backup Theft",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 119,
+    "name": "Physical Device Theft",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  },
+  {
+    "id": 120,
+    "name": "Malicious Browser Extension",
+    "category": "Infrastructure Supply Chain And Insider",
+    "route": "payment",
+    "signals": {
+      "route": "payment",
+      "payload_pattern": "infra_abuse_pattern",
+      "has_passkey_proof": false,
+      "device_attestation_valid": false,
+      "device_bound_token_valid": false,
+      "is_headless": true,
+      "requests_per_minute": 50,
+      "api_coverage_percent": 30
+    },
+    "expected": "BLOCK_OR_CHALLENGE",
+    "mitigation_layers": "Gate plus signed artifacts plus secret scanning plus least privilege plus audit plus backup encryption",
+    "note": "Defensive test signal only. Gate must never allow this simulation on a sensitive route."
+  }
+]
