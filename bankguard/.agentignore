@@ -1,0 +1,11 @@
+finance_core/
+ledger/
+fraud/
+pricing/
+.env
+*.pem
+*.key
+credentials/
+secrets/
+private/
+production/

@@ -1,0 +1,9 @@
+# In normal use there are no finance paths in this repo.
+# This file is a trap door: if a finance path ever appears by mistake,
+# it requires a human finance owner and can never be merged by an agent alone.
+finance_core/ @finance-owners
+ledger/ @finance-owners
+fraud/ @finance-owners
+pricing/ @finance-owners
+.github/workflows/ @platform-owners
+gateway/ @platform-owners
