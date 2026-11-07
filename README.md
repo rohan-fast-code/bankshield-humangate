@@ -1,4 +1,18 @@
-# BankShield HumanGate: Open Source Blocker For Banking Apps And Websites
+<p align="center">
+  <img src="assets/logo-512.png" width="180" alt="BankShield HumanGate logo">
+</p>
+
+<h1 align="center">BankShield HumanGate</h1>
+
+<p align="center"><strong>Stop AI agents from moving money without human proof.</strong></p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/license/rohan-fast-code/bankshield-humangate" alt="MIT license">
+  <img src="https://img.shields.io/github/v/release/rohan-fast-code/bankshield-humangate" alt="Latest release">
+  <img src="https://img.shields.io/badge/stacks-Python%20%7C%20Go%20%7C%20Rust-blue" alt="Python, Go and Rust stacks">
+  <img src="https://img.shields.io/badge/proof-passkey%20and%20WebAuthn-purple" alt="Passkey and WebAuthn proof">
+  <img src="https://img.shields.io/badge/demo%20only-no%20real%20bank%20data-orange" alt="Demo only, no real bank data">
+</p>
 
 BankShield HumanGate is an open source, framework agnostic gate that stops AI agents and automated attacks from reaching finance code, account data, and money movement in banking apps and websites.
 
@@ -6,61 +20,81 @@ It does not try to guess whether a visitor is human by looking at a CAPTCHA or a
 
 An agent with copied screens, copied code, a password, or a stolen token cannot produce that proof. So it is stopped at the gate, before it reaches finance code, before it reaches account data, and before it can move money.
 
-## What is inside
+## Why this matters
 
-1. BankGuard, in bankguard: a repo design where finance code is absent from the agent workspace, plus a policy gateway that allows interface reads only, denies direct writes, blocks reverse tools, and logs every attempt.
-2. HumanGate, in humangate: a universal gate for any app or website, based on three proofs: human proof with a passkey, device proof with attestation and device binding, and request proof with a signed, timestamped, one time nonce request.
-3. HumanGate Blocker v2, in humangate_blocker: a scalable blocker tested against a catalog of 120 attack types, in 7 groups: Web Application, API, Mobile Application, Authentication And Session, AI Agent, Banking Fraud And Transaction, and Infrastructure Supply Chain And Insider.
-4. Docs, in docs: the original BankShield idea and a summary of 11 latest research papers that shaped this design.
+Bank accounts are now attacked by software, not only by people. Automated agents and bots can copy an app screen by screen, study its code, guess or reuse passwords, replay stolen tokens, and try thousands of actions at machine speed, day and night, without getting tired. When one of those attempts succeeds on a money route, real money leaves a real account, and the account holder finds out after the loss.
 
-## Test results, verified in this repo
+Passwords, CAPTCHAs, and browser checks were built for human attackers and simple bots. They do not prove that a human intended a specific payment to a specific payee. That proof is the missing layer, and it is the layer this project builds, openly, so any bank, fintech, or security team can study it, test it, and adapt it.
 
-BankGuard gateway tests: passed.
-BankGuard leak scan: passed, no banned finance pattern found in the agent repo.
-BankGuard hostile agent simulation: 9 hostile attempts denied, 3 safe attempts allowed as interface reads or draft proposals only.
-HumanGate tests: passed, human payment allowed, headless agent payment blocked, stolen token on a wrong device blocked, forged signature blocked.
-HumanGate Blocker v2: 120 attacks tested, 120 blocked, 0 allowed on a sensitive route.
+## What the gate does
 
-Run all tests yourself, with Python 3 only, no extra dependencies:
+- BankGuard: keeps finance code out of the agent workspace entirely. Agents see a public interface only, direct writes are denied, reverse engineering tools are blocked inside the workspace, and every attempt is logged.
+- HumanGate: decides who may act on a route, using three proofs together: human proof with a passkey, device proof with attestation and device binding, and request proof with a signed, timestamped, one time nonce request.
+- AgentGuard: an MCP policy gateway for agent tools. Finance related reads return the public interface only, writes are denied by default and need human owner approval, secrets are never shown raw, and every call is audit logged.
+- HumanGate Blocker: a scalable blocker in front of sensitive routes, fail closed for money, tested against a catalog of 120 attack types in 7 groups.
+- One shared gate specification (docs/GATE_SPEC.md), implemented in Python, Go, and Rust in stacks, and tested against the same 3000 shared test cases.
+- Docs, in docs: the original BankShield idea, the shared gate specification, the Go and Rust support notes, and summaries of the research that shaped this design.
+
+## Verified test results
+
+Verified locally on 2026-11-07. Every number below comes from an actual run in this repository.
+
+| Stack | Test run | Cases | ALLOW | CHALLENGE | BLOCK |
+| --- | --- | --- | --- | --- | --- |
+| Python reference | stacks/shared/gate_reference.py | 3000 | 500 | 889 | 1611 |
+| Go | stacks/go, go test | 3000 | 500 | 889 | 1611 |
+| Rust | stacks/rust, cargo test | 3000 | 500 | 889 | 1611 |
+
+Pass rules on the shared cases: attack cases allowed on a sensitive route: 0. Legitimate cases denied (false positives): 0. The three stacks agree on every one of the 3000 cases.
+
+The 3000 shared cases are 2500 attack and fraud cases across 7 groups (Web Application 350, API 350, Mobile Application 300, Authentication And Session 350, AI Agent 400, Banking Fraud And Transaction 450, Infrastructure Supply Chain And Insider 300) plus 500 legitimate cases. Money movement scenarios carry the extra weight: payment to a new payee, beneficiary addition followed by a transfer, a stolen token used on the wrong device, a replayed nonce, a signature reused for a different payee or a different amount, overlay or accessibility abuse during payment entry, session hijack before a sensitive action, systematic API probing before a payment attempt, and high value and high rate bursts.
+
+Existing suites, unchanged and still passing: BankGuard gateway tests passed, BankGuard finance leak scan passed, BankGuard hostile agent simulation denied 9 hostile attempts and allowed 3 safe ones, HumanGate tests passed, and HumanGate Blocker v2 tested 120 attacks with 120 blocked or challenged and 0 allowed on a sensitive route.
+
+Note: the tests use synthetic marker signals, not real exploits against a real bank. They prove gate logic and cross stack agreement. Real proof for a real bank still needs permission based penetration testing, code review, and production monitoring. See docs/GO_RUST_SUPPORT.md for full commands and limits.
+
+## Try it in two minutes
+
+You need Python 3 only for the first two commands. Go and Rust are needed only for their own stacks.
 
 ```
-python3 bankguard/tests/test_agent_guard.py
-python3 bankguard/tests/run_agent_simulation.py
-python3 bankguard/scripts/scan_for_finance_leak.py
-python3 humangate/tests/test_human_gate.py
-python3 humangate/tests/run_demo.py
+git clone https://github.com/rohan-fast-code/bankshield-humangate.git
+cd bankshield-humangate
 python3 humangate_blocker/tests/test_120_attacks.py
+python3 stacks/shared/gate_reference.py stacks/shared/test_vectors.json
+cd stacks/go && go test ./...
+cd ../rust && cargo test
 ```
 
-Note: the blocker test uses synthetic marker signals, not real exploits against a real bank. It proves gate logic. Real proof for a real bank still needs permission based penetration testing, code review, and production monitoring.
+## Star and share
 
-## Language stacks: one gate in Python, Go, and Rust
+If this project helps you think about agent proof for banking, please star the repository so other builders can find it.
 
-The gate decision logic now exists as one shared specification (docs/GATE_SPEC.md) implemented in three stacks that are tested against the same 3000 shared test cases in stacks/shared: a Python reference, a Go gate package with an HTTP middleware example in stacks/go, and a Rust gate library in stacks/rust. The cases are 2500 attack and fraud cases across the 7 groups above, with extra weight on money movement scenarios such as new payee payments, stolen tokens on the wrong device, replayed nonces, and signatures reused for a different payee or amount, plus 500 legitimate cases. Verified locally on 2026-11-07, all three stacks agree on every case: 3000 tested, 500 ALLOW, 889 CHALLENGE, 1611 BLOCK, with 0 attacks allowed on a sensitive route and 0 legitimate false positives. See docs/GO_RUST_SUPPORT.md for commands, counts per group, and limits. The vectors are synthetic and prove gate logic and cross stack parity, not real bank invulnerability.
+Share it: [X](https://twitter.com/intent/tweet?text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.%20Python%2C%20Go%20and%20Rust%2C%203000%20shared%20test%20cases.&url=https://github.com/rohan-fast-code/bankshield-humangate) · [LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https://github.com/rohan-fast-code/bankshield-humangate) · [WhatsApp](https://wa.me/?text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.%20https://github.com/rohan-fast-code/bankshield-humangate) · [Telegram](https://t.me/share/url?url=https://github.com/rohan-fast-code/bankshield-humangate&text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.)
 
-## How to use it in any bank
+## Built for real financial services, only when implemented properly
 
-1. Deploy the gate as a reverse proxy or middleware in front of finance routes. In Python, import the gate modules in this repo. In Java Spring Boot, port the same decision rules into a filter, see humangate/adapters/SpringGateFilter.java for the pattern.
+This repo ships as a demo and research codebase, with demo values only in its tests, so anyone can run it and check the gate logic without real bank code, real customer data, real secrets, or real keys.
+
+That demo form is not the limit of the project. This is also a production oriented design for real financial services, when it is implemented properly in a real service. The gate is stack independent, it works as a sidecar proxy or middleware in front of finance routes, and it is meant to sit in front of real money routes, not only in a classroom example.
+
+How to use it in a real service:
+
+1. Deploy the gate as a reverse proxy or middleware in front of finance routes. In Python, import the gate modules in this repo. In Go and Rust, use the stacks in this repo. In Java Spring Boot, port the same decision rules into a filter, see humangate/adapters/SpringGateFilter.java for the pattern.
 2. Add a bank policy file for sensitive routes, passkey requirement, attestation requirement, rate limits, and first payee delay.
 3. Add client proof: WebAuthn passkeys on the web, Keystore or Secure Enclave keys on mobile, ephemeral session keys after attestation, and request signing with timestamp and nonce.
 4. Connect state in production: Redis for nonce, rate, and traffic window state, a queue for audit and alerts, and a risk service for device and transaction scoring.
 5. Keep finance logic behind the gate, on the server, with hardware security modules and tokenization. The gate is the front door. It does not replace server authority.
 
-## The core invariant
-
-Even with full UI source, full public API documentation, and a fully decompiled app, an attacker agent must still lack all of these at the same time: a non exportable private key in secure hardware, a fresh server attestation, a transaction signature bound to amount and payee, and a risk approval from the server. If any one is missing, money does not move.
-
-## Not only a demo: built for real financial services, when implemented properly
-
-This repo ships as a demo and research codebase, with demo values only in its tests, so anyone can run it and check the gate logic without real bank code, real customer data, real secrets, or real keys.
-
-That demo form is not the limit of the project. This is also a production oriented design for real financial services, when it is implemented properly in a real service. The gate is stack independent, it works as a sidecar proxy or middleware in front of finance routes, it uses the same decision rules across Python, Java Spring, Node, Go, .NET, PHP, Ruby, Rust, mobile, and web, and it is meant to sit in front of real money routes, not only in a classroom example.
-
-When implemented in a real financial service, it works well because money logic stays on the server, behind the gate, with hardware security modules and tokenization, with Redis for nonce, rate, and traffic window state, with an audit queue and alerts, and with a risk service for device and transaction scoring. The gate itself is the front door. It does not replace server authority, and a real deployment must still connect those production pieces, do its own threat modelling, do permission based penetration testing and code review, and complete its own compliance review.
+When implemented in a real financial service, it works well because money logic stays on the server, behind the gate, with hardware security modules and tokenization, with Redis for nonce, rate, and traffic window state, with an audit queue and alerts, and with a risk service for device and transaction scoring. A real deployment must still connect those production pieces, do its own threat modelling, do permission based penetration testing and code review, and complete its own compliance review.
 
 What this project is not, even in a real deployment: it is not a certified banking product on its own, and copying this repo alone does not make a service compliant. A bank must do the production work listed above before using any part of this code in production.
 Do not test this against a real bank app or website without written permission from that bank. Test only on apps you own or have written permission to test.
 A gate cannot stop a human who voluntarily gives away a passkey, or an insider with legitimate access who abuses it. Those need limits, dual approval, anomaly detection, and human review behind the gate.
+
+## The core invariant
+
+Even with full UI source, full public API documentation, and a fully decompiled app, an attacker agent must still lack all of these at the same time: a non exportable private key in secure hardware, a fresh server attestation, a transaction signature bound to amount and payee, and a risk approval from the server. If any one is missing, money does not move.
 
 ## Contributing
 
