@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="1254" height="1254" alt="BankShield HumanGate Logo" src="https://github.com/user-attachments/assets/e03afbaa-9eb1-4b2c-bd48-b28627ed6ae6" />
+  <img width="480px" height="480px" alt="BankShield HumanGate Logo" src="https://github.com/user-attachments/assets/e03afbaa-9eb1-4b2c-bd48-b28627ed6ae6" />
 </p>
 
 <h1 align="center">BankShield HumanGate</h1>
