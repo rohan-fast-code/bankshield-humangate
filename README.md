@@ -14,6 +14,10 @@
   <img src="https://img.shields.io/badge/demo%20only-no%20real%20bank%20data-orange" alt="Demo only, no real bank data">
 </p>
 
+<p align="center">
+  <a href="https://www.producthunt.com/products/bankshield-humangate?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-bankshield-humangate" target="_blank" rel="noopener noreferrer"><img alt="BankShield HumanGate - Stop AI agents from moving money without human proof | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1307761&amp;theme=dark&amp;t=1794061505970"></a>
+</p>
+
 BankShield HumanGate is an open source, framework agnostic gate that stops AI agents and automated attacks from reaching finance code, account data, and money movement in banking apps and websites.
 
 It does not try to guess whether a visitor is human by looking at a CAPTCHA or a browser string. Modern agents fake those easily. It lets traffic in only when it carries proof that a real human, on a real registered device, with a hardware backed key, intended that exact action.
