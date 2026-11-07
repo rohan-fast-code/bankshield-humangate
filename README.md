@@ -34,6 +34,10 @@ python3 humangate_blocker/tests/test_120_attacks.py
 
 Note: the blocker test uses synthetic marker signals, not real exploits against a real bank. It proves gate logic. Real proof for a real bank still needs permission based penetration testing, code review, and production monitoring.
 
+## Language stacks: one gate in Python, Go, and Rust
+
+The gate decision logic now exists as one shared specification (docs/GATE_SPEC.md) implemented in three stacks that are tested against the same 3000 shared test cases in stacks/shared: a Python reference, a Go gate package with an HTTP middleware example in stacks/go, and a Rust gate library in stacks/rust. The cases are 2500 attack and fraud cases across the 7 groups above, with extra weight on money movement scenarios such as new payee payments, stolen tokens on the wrong device, replayed nonces, and signatures reused for a different payee or amount, plus 500 legitimate cases. Verified locally on 2026-11-07, all three stacks agree on every case: 3000 tested, 500 ALLOW, 889 CHALLENGE, 1611 BLOCK, with 0 attacks allowed on a sensitive route and 0 legitimate false positives. See docs/GO_RUST_SUPPORT.md for commands, counts per group, and limits. The vectors are synthetic and prove gate logic and cross stack parity, not real bank invulnerability.
+
 ## How to use it in any bank
 
 1. Deploy the gate as a reverse proxy or middleware in front of finance routes. In Python, import the gate modules in this repo. In Java Spring Boot, port the same decision rules into a filter, see humangate/adapters/SpringGateFilter.java for the pattern.
