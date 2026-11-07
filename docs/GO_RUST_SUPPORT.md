@@ -75,8 +75,15 @@ Existing suites, rerun after this work landed, with no changes to their
 code: BankGuard gateway tests passed, BankGuard finance leak scan passed,
 HumanGate tests passed, and the HumanGate Blocker suite still blocks or
 challenges 120 of 120 attacks with 0 allowed on a sensitive route.
-CI (.github/workflows/ci.yml) now also runs the Python parity check, the
-Go tests, and the Rust tests on every push and pull request.
+A CI update that adds the Python parity check, the Go tests, and the
+Rust tests to .github/workflows/ci.yml is prepared and verified locally,
+but it is not on GitHub yet: the GitHub integration used for the rest of
+this push does not have permission to write workflow files (the push was
+refused with a 403 on the workflows path, the same limit that required
+the original ci.yml to be added through the website). Until the updated
+ci.yml is added through the GitHub website, GitHub CI runs the original
+Python steps only. All Go, Rust, and parity results in this document are
+local verified runs.
 
 ## How to run each stack
 
