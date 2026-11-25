@@ -1,0 +1,17 @@
+{
+    "description": "BankShield HumanGate TypeScript implementation of the shared gate specification v1. Demo only, synthetic signals, no real bank data.",
+    "name": "bankshield-humangate-ts",
+    "private": true,
+    "scripts": {
+        "example": "node examples/example.ts",
+        "bench": "node bench/bench.ts",
+        "test": "node --test test/vectors.test.ts",
+        "typecheck": "tsc --noEmit"
+    },
+    "type": "module",
+    "version": "1.0.0",
+    "devDependencies": {
+        "@types/node": "^26.6.10",
+        "typescript": "^7.0.2"
+    }
+}
