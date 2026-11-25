@@ -19,6 +19,12 @@ fn main() {
         ov: 0,
         np: 0,
         amt: 5000,
+        ac: 0,
+        dd: 0,
+        ag: 0,
+        pi: 0,
+        mc: 0,
+        rd: 0,
     };
     let d = decide(&payment);
     println!(
