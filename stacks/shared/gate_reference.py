@@ -1,7 +1,8 @@
-"""BankShield shared gate specification v1: Python reference implementation.
+"""BankShield shared gate specification v2: Python reference implementation.
 
-Implements docs/GATE_SPEC.md exactly. Go and Rust implementations in
-stacks/go and stacks/rust must agree with this reference on every shared
+Implements docs/GATE_SPEC.md exactly. Go, Rust, Java and TypeScript
+implementations in stacks/go, stacks/rust, stacks/java and
+stacks/typescript must agree with this reference on every shared
 test vector. Demo only: all signals are synthetic, no real bank data.
 """
 import json
@@ -34,11 +35,27 @@ def score(s):
         total += 30
     if not s["dt"]:
         total += 20
+    if s.get("ac", 0):
+        total += 25
+    if s.get("dd", 0):
+        total += 50
+    if s.get("ag", 0):
+        total += 35
+    if s.get("pi", 0):
+        total += 45
+    if s.get("mc", 0):
+        total += 40
+    if s.get("rd", 0):
+        total += 40
     return total
 
 
 def decide(s):
     """Return A (ALLOW), C (CHALLENGE) or B (BLOCK)."""
+    # Constant time per request: fixed arithmetic, no loops, no I/O,
+    # no regular expressions. The weights are fixed literals in score()
+    # and the sensitive-route set (SENSITIVE) is a module-level constant
+    # evaluated at import; neither is computed per request.
     if s["dm"]:
         return "B"
     if s["nr"]:
@@ -47,6 +64,18 @@ def decide(s):
         return "B"
     value = score(s)
     if s["r"] in SENSITIVE:
+        if s.get("dd", 0):
+            return "B"
+        if s.get("mc", 0):
+            return "B"
+        if s.get("rd", 0):
+            return "B"
+        if s.get("pi", 0):
+            return "B"
+        if s.get("ag", 0):
+            return "B"
+        if s.get("ac", 0):
+            return "B" if value >= 80 else "C"
         full_proof = s["pk"] and s["dp"] and s["dt"]
         if full_proof and value < 50:
             return "A"
