@@ -1,0 +1,18 @@
+# WebAuthn dependencies for stacks/shared/webauthn (Python).
+# The gate itself (gate_reference.py) has zero dependencies; only this
+# WebAuthn package needs the library below.
+# Install inside a virtual environment, never into the repo:
+#   python3 -m venv ~/workspace/bankshield-webauthn-venv
+#   ~/workspace/bankshield-webauthn-venv/bin/pip install -r requirements.txt
+#
+# Note: the PyPI name "py_webauthn" resolves to a stale 0.0.8 release
+# that cannot load on this system (its oscrypto dependency fails to
+# detect libcrypto), so the maintained "webauthn" package is used
+# instead. It is the same duo-labs py_webauthn library (3.x).
+webauthn==3.0.1
+# Test-only: the simulated authenticator in tests/ builds credentials
+# with these. They are transitive dependencies of "webauthn" above, so
+# they are already installed with it; they are listed here only so the
+# test dependency is explicit.
+cbor2==6.3.0
+cryptography==50.0.2
