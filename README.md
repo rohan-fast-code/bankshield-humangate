@@ -9,7 +9,7 @@
 <p align="center">
   <img src="https://img.shields.io/github/license/rohan-fast-code/bankshield-humangate" alt="MIT license">
   <img src="https://img.shields.io/github/v/release/rohan-fast-code/bankshield-humangate" alt="Latest release">
-  <img src="https://img.shields.io/badge/stacks-Python%20%7C%20Go%20%7C%20Rust-blue" alt="Python, Go and Rust stacks">
+  <img src="https://img.shields.io/badge/stacks-Python%20%7C%20Go%20%7C%20Rust%20%7C%20Java%20%7C%20TypeScript-blue" alt="Python, Go, Rust, Java and TypeScript stacks">
   <img src="https://img.shields.io/badge/proof-passkey%20and%20WebAuthn-purple" alt="Passkey and WebAuthn proof">
   <img src="https://img.shields.io/badge/demo%20only-no%20real%20bank%20data-orange" alt="Demo only, no real bank data">
 </p>
@@ -36,30 +36,46 @@ Passwords, CAPTCHAs, and browser checks were built for human attackers and simpl
 - HumanGate: decides who may act on a route, using three proofs together: human proof with a passkey, device proof with attestation and device binding, and request proof with a signed, timestamped, one time nonce request.
 - AgentGuard: an MCP policy gateway for agent tools. Finance related reads return the public interface only, writes are denied by default and need human owner approval, secrets are never shown raw, and every call is audit logged.
 - HumanGate Blocker: a scalable blocker in front of sensitive routes, fail closed for money, tested against a catalog of 120 attack types in 7 groups.
-- One shared gate specification (docs/GATE_SPEC.md), implemented in Python, Go, and Rust in stacks, and tested against the same 3000 shared test cases.
-- Docs, in docs: the original BankShield idea, the shared gate specification, the Go and Rust support notes, and summaries of the research that shaped this design.
+- One shared gate specification (docs/GATE_SPEC.md), implemented in Python, Go, Rust, Java, and TypeScript in stacks, and tested against the same 5600 shared test cases.
+- Docs, in docs: the original BankShield idea, the shared gate specification, the multi language support notes, the 2026 threat model, the measured performance notes, and summaries of the research that shaped this design.
 
 ## Verified test results
 
-Verified locally on 2026-11-07. Every number below comes from an actual run in this repository.
+Verified locally on 2026-11-25. Every number below comes from an actual run in this repository.
 
 | Stack | Test run | Cases | ALLOW | CHALLENGE | BLOCK |
 | --- | --- | --- | --- | --- | --- |
-| Python reference | stacks/shared/gate_reference.py | 3000 | 500 | 889 | 1611 |
-| Go | stacks/go, go test | 3000 | 500 | 889 | 1611 |
-| Rust | stacks/rust, cargo test | 3000 | 500 | 889 | 1611 |
+| Python reference | stacks/shared/gate_reference.py | 5600 | 900 | 1587 | 3113 |
+| Go | stacks/go, go test | 5600 | 900 | 1587 | 3113 |
+| Rust | stacks/rust, cargo test | 5600 | 900 | 1587 | 3113 |
+| Java | stacks/java, mvn test | 5600 | 900 | 1587 | 3113 |
+| TypeScript | stacks/typescript, npm test | 5600 | 900 | 1587 | 3113 |
 
-Pass rules on the shared cases: attack cases allowed on a sensitive route: 0. Legitimate cases denied (false positives): 0. The three stacks agree on every one of the 3000 cases.
+Pass rules on the shared cases: attack cases allowed on a sensitive route: 0. Legitimate cases denied (false positives): 0. The five stacks agree on every one of the 5600 cases.
 
-The 3000 shared cases are 2500 attack and fraud cases across 7 groups (Web Application 350, API 350, Mobile Application 300, Authentication And Session 350, AI Agent 400, Banking Fraud And Transaction 450, Infrastructure Supply Chain And Insider 300) plus 500 legitimate cases. Money movement scenarios carry the extra weight: payment to a new payee, beneficiary addition followed by a transfer, a stolen token used on the wrong device, a replayed nonce, a signature reused for a different payee or a different amount, overlay or accessibility abuse during payment entry, session hijack before a sensitive action, systematic API probing before a payment attempt, and high value and high rate bursts.
+The 5600 shared cases are 4700 attack and fraud cases across 7 groups (Web Application 600, API 600, Mobile Application 500, Authentication And Session 700, AI Agent 850, Banking Fraud And Transaction 900, Infrastructure Supply Chain And Insider 550) plus 900 legitimate cases. Money movement scenarios carry the extra weight: payment to a new payee, beneficiary addition followed by a transfer, a stolen token used on the wrong device, a replayed nonce, a signature reused for a different payee or a different amount, overlay or accessibility abuse during payment entry, session hijack before a sensitive action, systematic API probing before a payment attempt, and high value and high rate bursts. New families in this round add cross border payment to a new payee, QR payment to an untrusted merchant, SIM swap followed by a device change, device farm bursts, credential stuffing bursts before a payment, refund abuse, and mule account patterns. The spec v2 families add disbursement diversion to a mule account, approval tampering followed by a legitimate process payment, agent overreach beyond task authorization, indirect prompt injection triggering a payment, mule chain transfers, and record deletion after a transfer.
+
+## Measured performance
+
+Measured locally on 2026-11-25 on one Linux VM (AMD EPYC 9D25). The decision function is constant time per request in every stack: fixed arithmetic over the signal fields, no loops over test vectors, no input or output, no regular expressions, and no per request allocation in the hot path. The runtime gate never loads the shared test vector file.
+
+| Stack | Median decision latency | Decisions per second | Artifact size |
+| --- | --- | --- | --- |
+| Python reference | 667 to 692 ns | about 1.47M | gate_reference.py 3,361 bytes |
+| Go | 26.40 ns per op | about 37.9M | middleware example binary 8,733,569 bytes; gate package archive 17,986 bytes |
+| Rust | 13.17 ns | 71,271,294 | example binary 293,200 bytes; gate rlib 182,990 bytes |
+| Java | 50 to 60 ns | 8,425,052 | jar 11,190 bytes |
+| TypeScript | 80.0 ns | 5,683,720 | src directory 7,091 bytes, no build step |
+
+Full measured table with p99 latencies, peak memory, benchmark commands, and caveats: docs/PERFORMANCE.md. The numbers above are measured, not estimated; the p99 for Python varies on a shared VM and is reported as a range in that document.
 
 Existing suites, unchanged and still passing: BankGuard gateway tests passed, BankGuard finance leak scan passed, BankGuard hostile agent simulation denied 9 hostile attempts and allowed 3 safe ones, HumanGate tests passed, and HumanGate Blocker v2 tested 120 attacks with 120 blocked or challenged and 0 allowed on a sensitive route.
 
-Note: the tests use synthetic marker signals, not real exploits against a real bank. They prove gate logic and cross stack agreement. Real proof for a real bank still needs permission based penetration testing, code review, and production monitoring. See docs/GO_RUST_SUPPORT.md for full commands and limits.
+Note: the tests use synthetic marker signals, not real exploits against a real bank. They prove gate logic and cross stack agreement. Real proof for a real bank still needs permission based penetration testing, code review, and production monitoring. See docs/MULTI_LANGUAGE_SUPPORT.md for full commands and limits.
 
 ## Try it in two minutes
 
-You need Python 3 only for the first two commands. Go and Rust are needed only for their own stacks.
+You need Python 3 only for the first two commands. Go, Rust, Java, and TypeScript are needed only for their own stacks.
 
 ```
 git clone https://github.com/rohan-fast-code/bankshield-humangate.git
@@ -68,13 +84,15 @@ python3 humangate_blocker/tests/test_120_attacks.py
 python3 stacks/shared/gate_reference.py stacks/shared/test_vectors.json
 cd stacks/go && go test ./...
 cd ../rust && cargo test
+cd ../java && mvn test
+cd ../typescript && npm test
 ```
 
 ## Star and share
 
 If this project helps you think about agent proof for banking, please star the repository so other builders can find it.
 
-Share it: [X](https://twitter.com/intent/tweet?text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.%20Python%2C%20Go%20and%20Rust%2C%203000%20shared%20test%20cases.&url=https://github.com/rohan-fast-code/bankshield-humangate) · [LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https://github.com/rohan-fast-code/bankshield-humangate) · [WhatsApp](https://wa.me/?text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.%20https://github.com/rohan-fast-code/bankshield-humangate) · [Telegram](https://t.me/share/url?url=https://github.com/rohan-fast-code/bankshield-humangate&text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.)
+Share it: [X](https://twitter.com/intent/tweet?text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.%20Python%2C%20Go%2C%20Rust%2C%20Java%20and%20TypeScript%2C%205600%20shared%20test%20cases.&url=https://github.com/rohan-fast-code/bankshield-humangate) · [LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https://github.com/rohan-fast-code/bankshield-humangate) · [WhatsApp](https://wa.me/?text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.%20https://github.com/rohan-fast-code/bankshield-humangate) · [Telegram](https://t.me/share/url?url=https://github.com/rohan-fast-code/bankshield-humangate&text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.)
 
 ## Built for real financial services, only when implemented properly
 
@@ -84,7 +102,7 @@ That demo form is not the limit of the project. This is also a production orient
 
 How to use it in a real service:
 
-1. Deploy the gate as a reverse proxy or middleware in front of finance routes. In Python, import the gate modules in this repo. In Go and Rust, use the stacks in this repo. In Java Spring Boot, port the same decision rules into a filter, see humangate/adapters/SpringGateFilter.java for the pattern.
+1. Deploy the gate as a reverse proxy or middleware in front of finance routes. In Python, import the gate modules in this repo. In Go, Rust, Java, and TypeScript, use the stacks in this repo. In Java Spring Boot, see humangate/adapters/SpringGateFilter.java for the filter pattern.
 2. Add a bank policy file for sensitive routes, passkey requirement, attestation requirement, rate limits, and first payee delay.
 3. Add client proof: WebAuthn passkeys on the web, Keystore or Secure Enclave keys on mobile, ephemeral session keys after attestation, and request signing with timestamp and nonce.
 4. Connect state in production: Redis for nonce, rate, and traffic window state, a queue for audit and alerts, and a risk service for device and transaction scoring.
