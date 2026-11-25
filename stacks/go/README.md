@@ -31,6 +31,7 @@ Risk score additions:
 - timing variance below 0.2 seconds with rpm above 20 adds 25
 - overlay abuse 20, new payee 15
 - missing device proof 30, missing device bound token 20
+- spec v2 adds: approval change 25, destination change 50, agent scope 35, prompt injection 45, mule chain 40, record deletion 40 (5600 shared vectors)
 - amount is informational only and is never scored
 
 Decision order:
@@ -38,10 +39,11 @@ Decision order:
 1. Device mismatch blocks.
 2. Replayed nonce blocks.
 3. Invalid session key signature blocks.
-4. Sensitive route: full proof (passkey plus device proof plus device bound
+4. Sensitive route: destination change, mule chain, record deletion, prompt injection, or agent scope blocks; approval change never allows (challenge at minimum, block at score 80 or above).
+5. Sensitive route: full proof (passkey plus device proof plus device bound
    token) with score below 50 allows; score at or above 80 blocks; otherwise
    challenge.
-5. Non sensitive route: score at or above 80 blocks; otherwise allow.
+6. Non sensitive route: score at or above 80 blocks; otherwise allow.
 
 ## How to run tests
 

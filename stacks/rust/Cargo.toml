@@ -6,3 +6,9 @@ edition = "2021"
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+
+[profile.release]
+# Space: strip symbols and use fat LTO so the release artifact stays
+# small. No effect on gate decisions; verified by the shared vector tests.
+strip = true
+lto = true

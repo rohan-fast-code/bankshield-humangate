@@ -6,7 +6,7 @@ This is the Rust implementation of the shared gate specification for the BankShi
 
 Sensitive routes are pay, trf, ben, exp, and sec. Non sensitive routes are view, login, and prof.
 
-Hard rules, checked first and in order, block on token device mismatch, on a replayed nonce, and on an invalid session key signature. After those rules, sensitive routes require full proof (passkey proof plus device proof plus device bound token) with a score below 50 to allow, block at a score of 80 or above, and challenge otherwise. Non sensitive routes block at a score of 80 or above and allow otherwise.
+Hard rules, checked first and in order, block on token device mismatch, on a replayed nonce, and on an invalid session key signature. Spec v2 (5600 shared vectors) then blocks on a sensitive route for destination change, mule chain, record deletion, prompt injection, or agent scope, and never allows on approval change (challenge at minimum, block at a score of 80 or above). After those rules, sensitive routes require full proof (passkey proof plus device proof plus device bound token) with a score below 50 to allow, block at a score of 80 or above, and challenge otherwise. Non sensitive routes block at a score of 80 or above and allow otherwise.
 
 ## Layout
 
