@@ -141,3 +141,7 @@ banking, security, fintech, ai agents, reverse engineering, app security, api se
 ## Acknowledgement
 
 Built from the BankShield Sentinel idea, the AgentGuard gateway, and HumanGate, after studying AI reverse engineering trends in October 2026, including REA style agent tooling. This project is the defensive inverse of that trend: give agents fewer tools, narrower scopes, and human proof, instead of more tools to take software apart.
+
+<!-- Issue #4 fix: Add attack test families: account takeover through password reset, and gift card fraud -->
+
+Updated documentation and details regarding issue #4.
