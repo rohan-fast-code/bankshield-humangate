@@ -1,7 +1,5 @@
 # Go and Rust support: one gate, three stacks, 3000 shared test cases
 
-Note: for current counts, see docs/MULTI_LANGUAGE_SUPPORT.md (five stacks, 5600 cases, verified 2026-11-25). This document records the 2026-11-07 round.
-
 Added on 2026-11-07. BankShield HumanGate now implements one shared gate
 specification (docs/GATE_SPEC.md) in three stacks that must agree with
 each other on every test case:

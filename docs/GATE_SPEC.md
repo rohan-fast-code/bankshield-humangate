@@ -162,8 +162,9 @@ The shared vectors grow from 5000 cases to 5600 cases in v2, with 600 new
 cases in seven families: disbursement_diversion, approval_tampering_stepup,
 approval_tampering_high_risk, agent_overreach, prompt_injection_payment,
 mule_chain_transfer, and record_deletion_after_transfer. Cases 1 to 5000
-are unchanged from v1. The threat model behind the new signals is
-described in docs/THREAT_MODEL_2026.md.
+are unchanged from v1. The new signals model current payment and
+disbursement API abuse, approval workflow abuse, indirect prompt
+injection, and agentic attacks.
 
 ## Test vectors
 

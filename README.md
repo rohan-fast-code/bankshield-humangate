@@ -37,7 +37,7 @@ Passwords, CAPTCHAs, and browser checks were built for human attackers and simpl
 - AgentGuard: an MCP policy gateway for agent tools. Finance related reads return the public interface only, writes are denied by default and need human owner approval, secrets are never shown raw, and every call is audit logged.
 - HumanGate Blocker: a scalable blocker in front of sensitive routes, fail closed for money, tested against a catalog of 120 attack types in 7 groups.
 - One shared gate specification (docs/GATE_SPEC.md), implemented in Python, Go, Rust, Java, and TypeScript in stacks, and tested against the same 5600 shared test cases.
-- Docs, in docs: the original BankShield idea, the shared gate specification, the multi language support notes, the 2026 threat model, the measured performance notes, and summaries of the research that shaped this design.
+- Docs, in docs: the original BankShield idea, the shared gate specification, and summaries of the research that shaped this design.
 
 ## Verified test results
 
@@ -55,23 +55,9 @@ Pass rules on the shared cases: attack cases allowed on a sensitive route: 0. Le
 
 The 5600 shared cases are 4700 attack and fraud cases across 7 groups (Web Application 600, API 600, Mobile Application 500, Authentication And Session 700, AI Agent 850, Banking Fraud And Transaction 900, Infrastructure Supply Chain And Insider 550) plus 900 legitimate cases. Money movement scenarios carry the extra weight: payment to a new payee, beneficiary addition followed by a transfer, a stolen token used on the wrong device, a replayed nonce, a signature reused for a different payee or a different amount, overlay or accessibility abuse during payment entry, session hijack before a sensitive action, systematic API probing before a payment attempt, and high value and high rate bursts. New families in this round add cross border payment to a new payee, QR payment to an untrusted merchant, SIM swap followed by a device change, device farm bursts, credential stuffing bursts before a payment, refund abuse, and mule account patterns. The spec v2 families add disbursement diversion to a mule account, approval tampering followed by a legitimate process payment, agent overreach beyond task authorization, indirect prompt injection triggering a payment, mule chain transfers, and record deletion after a transfer.
 
-## Measured performance
-
-Measured locally on 2026-11-25 on one Linux VM (AMD EPYC 9D25). The decision function is constant time per request in every stack: fixed arithmetic over the signal fields, no loops over test vectors, no input or output, no regular expressions, and no per request allocation in the hot path. The runtime gate never loads the shared test vector file.
-
-| Stack | Median decision latency | Decisions per second | Artifact size |
-| --- | --- | --- | --- |
-| Python reference | 667 to 692 ns | about 1.47M | gate_reference.py 3,361 bytes |
-| Go | 26.40 ns per op | about 37.9M | middleware example binary 8,733,569 bytes; gate package archive 17,986 bytes |
-| Rust | 13.17 ns | 71,271,294 | example binary 293,200 bytes; gate rlib 182,990 bytes |
-| Java | 50 to 60 ns | 8,425,052 | jar 11,190 bytes |
-| TypeScript | 80.0 ns | 5,683,720 | src directory 7,091 bytes, no build step |
-
-Full measured table with p99 latencies, peak memory, benchmark commands, and caveats: docs/PERFORMANCE.md. The numbers above are measured, not estimated; the p99 for Python varies on a shared VM and is reported as a range in that document.
-
 Existing suites, unchanged and still passing: BankGuard gateway tests passed, BankGuard finance leak scan passed, BankGuard hostile agent simulation denied 9 hostile attempts and allowed 3 safe ones, HumanGate tests passed, and HumanGate Blocker v2 tested 120 attacks with 120 blocked or challenged and 0 allowed on a sensitive route.
 
-Note: the tests use synthetic marker signals, not real exploits against a real bank. They prove gate logic and cross stack agreement. Real proof for a real bank still needs permission based penetration testing, code review, and production monitoring. See docs/MULTI_LANGUAGE_SUPPORT.md for full commands and limits.
+Note: the tests use synthetic marker signals, not real exploits against a real bank. They prove gate logic and cross stack agreement. Real proof for a real bank still needs permission based penetration testing, code review, and production monitoring. See docs/GATE_SPEC.md for the specification and each stack README for its commands and limits.
 
 ## Try it in two minutes
 
@@ -120,11 +106,11 @@ Even with full UI source, full public API documentation, and a fully decompiled 
 
 ## Contributing
 
-We welcome contributions, like REA style open development, but with a defensive mission. See CONTRIBUTING.md for how to propose a change, add an attack type to the catalog, add a test, or fix a bug.
+We welcome contributions, like REA style open development, but with a defensive mission. Start with CONTRIBUTING.md: it is the onboarding guide, with setup for every stack (Python, Go, Rust, Java, TypeScript), one test command per stack, the contribution paths (new attack cases, language ports, hard review, documentation, benchmarks), how a contribution is reviewed, and the contributor ladder from first time contributor to regular contributor to reviewer. Small first tasks are listed in the repository issues labelled good first issue, each with the files involved and how it is verified.
 
-If you are interested online, vetting happens first. See docs/CONTRIBUTOR_VETTING.md. We check your GitHub profile properly: are you actively contributing, where are you contributing, what are your contributions, and have you contributed to REA, official repo morluto/rea, or not, with exact links verified. Only after vetting do we send the contributor form, and that form is given by the maintainer later, see docs/CONTRIBUTOR_FORM.md. No form is sent before vetting, and no form link is invented here.
-Good first contributions: add a new attack type with a test signal and a mitigation layer, add an adapter for a new framework, improve docs, or improve test coverage.
-All contributions need tests. A new attack type without a test will not be merged. A change to finance related code, if it ever appears, needs a human finance owner review.
+If you are interested online, vetting happens first. See docs/CONTRIBUTOR_VETTING.md. We check your GitHub profile properly: are you actively contributing, where are you contributing, what are your contributions, and have you contributed to REA, official repo morluto/rea, or not, with exact links verified. Only after vetting do we send the contributor form, and that form is given by the maintainer later, see docs/CONTRIBUTOR_FORM.md. No form is sent before vetting, and no form link is invented here. To introduce yourself, open an issue in the repository and use the contributor interest template.
+Good first contributions: add a new attack case with a test signal and the expected decision, add a standalone hard rule unit test in TypeScript or Rust, fix a benchmark, or improve docs. See the open issues labelled good first issue for the current list.
+All contributions need tests. A new attack type without a test will not be merged. Vectors must still pass identically in all five stacks, and no decision may change without a spec change. A change to finance related code, if it ever appears, needs a human finance owner review.
 
 ## Security
 
