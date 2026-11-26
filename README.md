@@ -119,7 +119,7 @@ If you find a security issue in this repo, do not open a public issue with explo
 
 ## License
 
-MIT License. See LICENSE for the full text. Copyright 2026 Rohan Bhambare.
+Licensed under the MIT License OR the Apache License 2.0. Pick either one. See LICENSE for the MIT text and LICENSE-APACHE-2.0 for the Apache text. Copyright 2026 Rohan Bhambare.
 
 ## Topics for GitHub
 
