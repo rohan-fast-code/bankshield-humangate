@@ -12,6 +12,7 @@
   <img src="https://img.shields.io/badge/stacks-Python%20%7C%20Go%20%7C%20Rust%20%7C%20Java%20%7C%20TypeScript-blue" alt="Python, Go, Rust, Java and TypeScript stacks">
   <img src="https://img.shields.io/badge/proof-passkey%20and%20WebAuthn-purple" alt="Passkey and WebAuthn proof">
   <img src="https://img.shields.io/badge/demo%20only-no%20real%20bank%20data-orange" alt="Demo only, no real bank data">
+  <a href="https://www.bestpractices.dev/projects/17131"><img src="https://www.bestpractices.dev/projects/17131/badge" alt="OpenSSF Best Practices"></a>
 </p>
 
 <p align="center">
