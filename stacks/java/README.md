@@ -21,8 +21,8 @@ not make any service certified, compliant, or safe for real financial use.
 ## Layout
 
 - `pom.xml` — Maven project, Java 21, `com.bankshield:humangate-java`.
-  No main-code dependencies; the only dependency is JUnit 5
-  (`org.junit.jupiter:junit-jupiter:5.10.3`, test scope).
+  No main-code dependencies; the only dependency is JUnit 6
+  (`org.junit.jupiter:junit-jupiter:6.1.3`, test scope).
 - `src/main/java/com/bankshield/gate/Gate.java` — `Gate` with the `Signals`
   record, the `Decision` enum (`ALLOW`, `CHALLENGE`, `BLOCK`), `score()` and
   `decide()`.
@@ -91,7 +91,8 @@ missing passkey payment -> CHALLENGE (score 0)
 
 ## Verified counts
 
-Final run, 25 November 2026 (OpenJDK 21.0.13, Maven 3.9.11), spec v2:
+Final run, 26 November 2026 (OpenJDK 21.0.13, Maven 3.9.11, JUnit 6.1.3,
+Surefire 3.6.1, compiler plugin 3.16.0), spec v2:
 
 ```
 verified 5600 cases: ALLOW=900 CHALLENGE=1587 BLOCK=3113
