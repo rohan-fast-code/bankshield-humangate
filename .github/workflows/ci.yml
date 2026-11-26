@@ -19,9 +19,15 @@ jobs:
       - run: python3 humangate/tests/test_human_gate.py
       - run: python3 humangate_blocker/tests/test_120_attacks.py
       - run: python3 stacks/shared/gate_reference.py stacks/shared/test_vectors.json
+      - run: pip install ruff==0.17.6
+      - run: ruff check .
       - uses: actions/setup-go@v5
         with:
           go-version: "1.27.x"
       - run: cd stacks/go && go test ./...
+      - run: cd stacks/go && go vet ./...
       - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
       - run: cd stacks/rust && cargo test
+      - run: cd stacks/rust && cargo clippy --all-targets -- -D warnings
