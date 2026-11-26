@@ -10,7 +10,6 @@ Design for scale:
   unavailable, challenge or block money, never allow it.
   Fail open only for public marketing pages, never for account data.
 """
-import time
 from dataclasses import dataclass
 
 

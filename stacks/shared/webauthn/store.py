@@ -15,7 +15,7 @@ authenticator, and there is deliberately no field for it on
 """
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 
 @dataclass

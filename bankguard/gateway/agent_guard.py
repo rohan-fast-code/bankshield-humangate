@@ -6,7 +6,6 @@ this file is bypassed, and that is a deployment failure, not a
 bug in this file.
 """
 import json
-import os
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -37,7 +36,7 @@ def canonical_path(requested):
         candidate = (REPO_ROOT / requested).resolve()
         candidate.relative_to(REPO_ROOT.resolve())
         return candidate
-    except Exception:
+    except ValueError:
         return None
 
 

@@ -85,7 +85,7 @@ def _load_webauthn_library():
     if removed_paths:
         sys.path[:] = kept_paths
     try:
-        import webauthn as real  # noqa: F401  (resolved from site-packages)
+        import webauthn as real  # resolved from site-packages
     except ImportError as exc:
         raise ImportError(
             "The 'webauthn' library (PyPI package 'webauthn', version 3.x) "
@@ -361,5 +361,5 @@ class WebAuthnService:
             if isinstance(raw_id, (bytes, bytearray)):
                 return bytes(raw_id)
             return _lib.base64url_to_bytes(raw_id)
-        except Exception:
+        except (TypeError, ValueError):
             return None

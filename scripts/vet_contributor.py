@@ -20,11 +20,12 @@ No token is required for public data, but GitHub rate limits unauthenticated
 requests. Set GITHUB_TOKEN in the environment if you hit a rate limit.
 The token is never printed, and never committed.
 """
+import http.client
 import json
 import os
 import sys
-import urllib.request
 import urllib.parse
+import urllib.request
 
 
 def get(url):
@@ -35,7 +36,7 @@ def get(url):
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             return json.loads(resp.read().decode("utf-8"))
-    except Exception as e:
+    except (OSError, ValueError, http.client.HTTPException) as e:
         return {"_error": str(e), "_url": url}
 
 

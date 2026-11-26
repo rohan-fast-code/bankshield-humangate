@@ -16,7 +16,7 @@ import tracemalloc
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from gate_reference import decide  # noqa: E402
+from gate_reference import decide
 
 # Representative signal dicts, built once before timing. They cover
 # every branch of decide()/score(): clean allow, sensitive allow with

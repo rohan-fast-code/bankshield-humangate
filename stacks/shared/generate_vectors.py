@@ -25,7 +25,7 @@ import sys
 from collections import Counter
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gate_reference import decide, SENSITIVE  # noqa: E402
+from gate_reference import SENSITIVE, decide
 
 SEED = 20261107
 rng = random.Random(SEED)

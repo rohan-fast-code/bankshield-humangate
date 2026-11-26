@@ -104,7 +104,7 @@ fn peak_rss_bytes() -> Option<u64> {
     let status = fs::read_to_string("/proc/self/status").ok()?;
     for line in status.lines() {
         if let Some(rest) = line.strip_prefix("VmHWM:") {
-            let kb: u64 = rest.trim().split_whitespace().next()?.parse().ok()?;
+            let kb: u64 = rest.split_whitespace().next()?.parse().ok()?;
             return Some(kb * 1024);
         }
     }
