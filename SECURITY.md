@@ -1,10 +1,12 @@
-# Security Policy
+# 🔐 Security Policy
 
-## Supported versions
+This repo guards money routes, so security reports get a fast, careful, and respectful response. Thank you for looking closely and for telling us before telling the world.
+
+## ✅ Supported versions
 
 This repo ships as a demo and research codebase, and the main branch is the only supported version for security fixes in this repo. There are no long term support branches yet.
 
-## Not only a demo: use in real financial services
+## 🏦 Not only a demo: use in real financial services
 
 This design is built for real financial services, when it is implemented properly, not only for demo use. The demo in this repo uses demo values only, so the gate logic can be checked safely. A real deployment must add the production pieces that the demo does not ship as a finished system:
 
@@ -16,22 +18,24 @@ This design is built for real financial services, when it is implemented properl
 
 Until those pieces are in place and reviewed, treat a deployment as a demo, not as a production banking control. Copying this repo alone does not make a service certified or compliant.
 
-## Reporting a vulnerability
+## 🚨 Reporting a vulnerability
 
 If you find a security issue in this repo, do not open a public issue with exploit details, and do not test it against a real bank.
 
 Open a private security advisory on GitHub, or contact the maintainer through GitHub, with:
+
 1. A description of the issue, with demo data only.
 2. Steps to reproduce in this repo, with demo data only.
 3. The impact you expect, and a suggested fix if you have one.
 
 We will acknowledge your report, investigate, and fix it in a pull request. We will credit you in the fix, unless you ask not to be credited.
 
-## Scope
+## 🎯 Scope
 
-In scope: code in this repo, gate decision logic, test suite, and docs that could mislead a bank into an unsafe deployment.
-Out of scope: real banks, real apps, real websites, and production systems you do not own. Do not test those without written permission.
+**In scope:** code in this repo, gate decision logic, test suite, and docs that could mislead a bank into an unsafe deployment.
 
-## Safe use
+**Out of scope:** real banks, real apps, real websites, and production systems you do not own. Do not test those without written permission.
+
+## 🧭 Safe use
 
 This project, on its own, is not a certified banking product. A bank must do its own threat modelling, penetration testing with permission, code review, and compliance review before using any part of this code in production. When those steps are done and the production pieces above are connected, this gate is intended to work well in front of real finance routes, as a front door control, not as a replacement for server authority.

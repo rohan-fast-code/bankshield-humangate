@@ -21,13 +21,15 @@
 
 <p align="center"><strong>One gate. Five languages. 6,200 test cases. Zero attacks allowed on a sensitive route.</strong></p>
 
+## 🛡️ What is BankShield HumanGate?
+
 BankShield HumanGate is an open source, framework agnostic gate that stops AI agents and automated attacks from reaching finance code, account data, and money movement in banking apps and websites.
 
 It does not try to guess whether a visitor is human by looking at a CAPTCHA or a browser string. Modern agents fake those easily. It lets traffic in only when it carries proof that a real human, on a real registered device, with a hardware backed key, intended that exact action.
 
 An agent with copied screens, copied code, a password, or a stolen token cannot produce that proof. So it is stopped at the gate, before it reaches finance code, before it reaches account data, and before it can move money.
 
-## New here? Start here
+## 🆕 New here? Start here
 
 1. **Run it in two minutes.** Clone the repo and run the two Python commands in [Try it in two minutes](#try-it-in-two-minutes). You will see the gate block 120 attacks and verify all 6,200 shared cases yourself.
 2. **Read the idea in five minutes.** The shared spec is [docs/GATE_SPEC.md](docs/GATE_SPEC.md): one page that explains what the gate checks and why.
@@ -35,22 +37,22 @@ An agent with copied screens, copied code, a password, or a stolen token cannot 
 
 Think you can break the gate? Try. If something gets through, tell us in Discussions. That is the fastest way to make the project better.
 
-## Why this matters
+## 🔥 Why this matters
 
 Bank accounts are now attacked by software, not only by people. Automated agents and bots can copy an app screen by screen, study its code, guess or reuse passwords, replay stolen tokens, and try thousands of actions at machine speed, day and night, without getting tired. When one of those attempts succeeds on a money route, real money leaves a real account, and the account holder finds out after the loss.
 
 Passwords, CAPTCHAs, and browser checks were built for human attackers and simple bots. They do not prove that a human intended a specific payment to a specific payee. That proof is the missing layer, and it is the layer this project builds, openly, so any bank, fintech, or security team can study it, test it, and adapt it.
 
-## What the gate does
+## 🧱 What the gate does
 
-- BankGuard: keeps finance code out of the agent workspace entirely. Agents see a public interface only, direct writes are denied, reverse engineering tools are blocked inside the workspace, and every attempt is logged.
-- HumanGate: decides who may act on a route, using three proofs together: human proof with a passkey, device proof with attestation and device binding, and request proof with a signed, timestamped, one time nonce request.
-- AgentGuard: an MCP policy gateway for agent tools. Finance related reads return the public interface only, writes are denied by default and need human owner approval, secrets are never shown raw, and every call is audit logged.
-- HumanGate Blocker: a scalable blocker in front of sensitive routes, fail closed for money, tested against a catalog of 120 attack types in 7 groups.
-- One shared gate specification (docs/GATE_SPEC.md), implemented in Python, Go, Rust, Java, and TypeScript in stacks, and tested against the same 6200 shared test cases.
-- Docs, in docs: the original BankShield idea, the shared gate specification, and summaries of the research that shaped this design.
+- **BankGuard:** keeps finance code out of the agent workspace entirely. Agents see a public interface only, direct writes are denied, reverse engineering tools are blocked inside the workspace, and every attempt is logged.
+- **HumanGate:** decides who may act on a route, using three proofs together: human proof with a passkey, device proof with attestation and device binding, and request proof with a signed, timestamped, one time nonce request.
+- **AgentGuard:** an MCP policy gateway for agent tools. Finance related reads return the public interface only, writes are denied by default and need human owner approval, secrets are never shown raw, and every call is audit logged.
+- **HumanGate Blocker:** a scalable blocker in front of sensitive routes, fail closed for money, tested against a catalog of 120 attack types in 7 groups.
+- **One shared gate specification** (docs/GATE_SPEC.md), implemented in Python, Go, Rust, Java, and TypeScript in stacks, and tested against the same 6200 shared test cases.
+- **Docs, in docs:** the original BankShield idea, the shared gate specification, and summaries of the research that shaped this design.
 
-## Verified test results
+## 🧪 Verified test results
 
 Verified locally on 2026-11-27. Every number below comes from an actual run in this repository.
 
@@ -70,7 +72,7 @@ Existing suites, unchanged and still passing: BankGuard gateway tests passed, Ba
 
 Note: the tests use synthetic marker signals, not real exploits against a real bank. They prove gate logic and cross stack agreement. Real proof for a real bank still needs permission based penetration testing, code review, and production monitoring. See docs/GATE_SPEC.md for the specification and each stack README for its commands and limits.
 
-## Try it in two minutes
+## ⚡ Try it in two minutes
 
 You need Python 3 only for the first two commands. Go, Rust, Java, and TypeScript are needed only for their own stacks.
 
@@ -85,13 +87,17 @@ cd ../java && mvn test
 cd ../typescript && npm test
 ```
 
-## Star and share
+## ⭐ Star and share
 
 If this project helps you think about agent proof for banking, please star the repository so other builders can find it.
 
 Share it: [X](https://twitter.com/intent/tweet?text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.%20Python%2C%20Go%2C%20Rust%2C%20Java%20and%20TypeScript%2C%206200%20shared%20test%20cases.&url=https://github.com/rohan-fast-code/bankshield-humangate) · [LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https://github.com/rohan-fast-code/bankshield-humangate) · [WhatsApp](https://wa.me/?text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.%20https://github.com/rohan-fast-code/bankshield-humangate) · [Telegram](https://t.me/share/url?url=https://github.com/rohan-fast-code/bankshield-humangate&text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.)
 
-## Built for real financial services, only when implemented properly
+## 💬 Talk to us
+
+Questions, ideas, attack cases, or a port to a new language? Come to [Discussions](https://github.com/rohan-fast-code/bankshield-humangate/discussions). That is where the community lives. First time contributors and good questions are welcome there.
+
+## 🏦 Built for real financial services, only when implemented properly
 
 This repo ships as a demo and research codebase, with demo values only in its tests, so anyone can run it and check the gate logic without real bank code, real customer data, real secrets, or real keys.
 
@@ -111,30 +117,28 @@ What this project is not, even in a real deployment: it is not a certified banki
 Do not test this against a real bank app or website without written permission from that bank. Test only on apps you own or have written permission to test.
 A gate cannot stop a human who voluntarily gives away a passkey, or an insider with legitimate access who abuses it. Those need limits, dual approval, anomaly detection, and human review behind the gate.
 
-## The core invariant
+## 🔒 The core invariant
 
 Even with full UI source, full public API documentation, and a fully decompiled app, an attacker agent must still lack all of these at the same time: a non exportable private key in secure hardware, a fresh server attestation, a transaction signature bound to amount and payee, and a risk approval from the server. If any one is missing, money does not move.
 
-## Contributing
+## 🤝 Contributing
 
-We welcome contributions, like REA style open development, but with a defensive mission. Start with CONTRIBUTING.md: it is the onboarding guide, with setup for every stack (Python, Go, Rust, Java, TypeScript), one test command per stack, the contribution paths (new attack cases, language ports, hard review, documentation, benchmarks), how a contribution is reviewed, and the contributor ladder from first time contributor to regular contributor to reviewer. Small first tasks are listed in the repository issues labelled good first issue, each with the files involved and how it is verified.
+We welcome contributions, like REA style open development, but with a defensive mission. Start with [CONTRIBUTING.md](CONTRIBUTING.md): it is the full onboarding guide, with setup for every stack, one test command per stack, the contribution paths, how a contribution is reviewed, and the contributor ladder. Small first tasks are listed in the repository issues labelled `good first issue`, each with the files involved and how it is verified.
 
-If you are interested online, vetting happens first. See docs/CONTRIBUTOR_VETTING.md. We check your GitHub profile properly: are you actively contributing, where are you contributing, what are your contributions, and have you contributed to REA, official repo morluto/rea, or not, with exact links verified. Only after vetting do we send the contributor form, and that form is given by the maintainer later, see docs/CONTRIBUTOR_FORM.md. No form is sent before vetting, and no form link is invented here. To introduce yourself, open an issue in the repository and use the contributor interest template, or say hello in [Discussions](https://github.com/rohan-fast-code/bankshield-humangate/discussions).
-Good first contributions: add a new attack case with a test signal and the expected decision, add a standalone hard rule unit test in TypeScript or Rust, fix a benchmark, or improve docs. See the open issues labelled good first issue for the current list.
-All contributions need tests. A new attack type without a test will not be merged. Vectors must still pass identically in all five stacks, and no decision may change without a spec change. A change to finance related code, if it ever appears, needs a human finance owner review.
+If you are interested online, vetting happens first. See docs/CONTRIBUTOR_VETTING.md. We check your GitHub profile properly before any assignment and before any form is sent. To introduce yourself, open an issue in the repository and use the contributor interest template, or say hello in [Discussions](https://github.com/rohan-fast-code/bankshield-humangate/discussions).
 
-## Security
+## 🔐 Security
 
-If you find a security issue in this repo, do not open a public issue with exploit details. See SECURITY.md for responsible disclosure.
+If you find a security issue in this repo, do not open a public issue with exploit details. See [SECURITY.md](SECURITY.md) for responsible disclosure.
 
-## License
+## 📜 License
 
 Licensed under the Apache License 2.0 OR the MIT License. Pick either one. See LICENSE for the Apache text and LICENSE-MIT for the MIT text. Copyright 2026 Rohan Bhambare.
 
-## Topics for GitHub
+## 🏷️ Topics for GitHub
 
 banking, security, fintech, ai agents, reverse engineering, app security, api security, mobile security, passkeys, webauthn, fraud prevention, open source, python, spring boot, mcp, agent security, owasp, hacktoberfest, openssf
 
-## Acknowledgement
+## 🙏 Acknowledgement
 
 Built from the BankShield Sentinel idea, the AgentGuard gateway, and HumanGate, after studying AI reverse engineering trends in October 2026, including REA style agent tooling. This project is the defensive inverse of that trend: give agents fewer tools, narrower scopes, and human proof, instead of more tools to take software apart.
