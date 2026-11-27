@@ -91,21 +91,21 @@ missing passkey payment -> CHALLENGE (score 0)
 
 ## Verified counts
 
-Final run, 26 November 2026 (OpenJDK 21.0.13, Maven 3.9.11, JUnit 6.1.3,
+Final run, 27 November 2026 (OpenJDK 21.0.13, Maven 3.9.11, JUnit 6.1.3,
 Surefire 3.6.1, compiler plugin 3.16.0), spec v2:
 
 ```
-verified 5600 cases: ALLOW=900 CHALLENGE=1587 BLOCK=3113
+verified 6200 cases: ALLOW=900 CHALLENGE=1687 BLOCK=3613
 attack_allow_on_sensitive=0
 legit_false_positives=0
 [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0
 [INFO] BUILD SUCCESS
 ```
 
-All 5600 shared vectors pass, with zero attack cases allowed on a sensitive
+All 6200 shared vectors pass, with zero attack cases allowed on a sensitive
 route and zero legitimate cases that do not ALLOW. (The vector file was
-expanded from 5000 to 5600 cases by a parallel worker while this stack was
-being updated; the counts above are from the final run against the 5600-case
+expanded from 5600 to 6200 cases by the daily upgrade run on 27 November
+2026; the counts above are from the final run against the 6200-case
 file.)
 
 ## Honest limits

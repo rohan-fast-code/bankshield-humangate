@@ -37,24 +37,24 @@ Passwords, CAPTCHAs, and browser checks were built for human attackers and simpl
 - HumanGate: decides who may act on a route, using three proofs together: human proof with a passkey, device proof with attestation and device binding, and request proof with a signed, timestamped, one time nonce request.
 - AgentGuard: an MCP policy gateway for agent tools. Finance related reads return the public interface only, writes are denied by default and need human owner approval, secrets are never shown raw, and every call is audit logged.
 - HumanGate Blocker: a scalable blocker in front of sensitive routes, fail closed for money, tested against a catalog of 120 attack types in 7 groups.
-- One shared gate specification (docs/GATE_SPEC.md), implemented in Python, Go, Rust, Java, and TypeScript in stacks, and tested against the same 5600 shared test cases.
+- One shared gate specification (docs/GATE_SPEC.md), implemented in Python, Go, Rust, Java, and TypeScript in stacks, and tested against the same 6200 shared test cases.
 - Docs, in docs: the original BankShield idea, the shared gate specification, and summaries of the research that shaped this design.
 
 ## Verified test results
 
-Verified locally on 2026-11-25. Every number below comes from an actual run in this repository.
+Verified locally on 2026-11-27. Every number below comes from an actual run in this repository.
 
 | Stack | Test run | Cases | ALLOW | CHALLENGE | BLOCK |
 | --- | --- | --- | --- | --- | --- |
-| Python reference | stacks/shared/gate_reference.py | 5600 | 900 | 1587 | 3113 |
-| Go | stacks/go, go test | 5600 | 900 | 1587 | 3113 |
-| Rust | stacks/rust, cargo test | 5600 | 900 | 1587 | 3113 |
-| Java | stacks/java, mvn test | 5600 | 900 | 1587 | 3113 |
-| TypeScript | stacks/typescript, npm test | 5600 | 900 | 1587 | 3113 |
+| Python reference | stacks/shared/gate_reference.py | 6200 | 900 | 1687 | 3613 |
+| Go | stacks/go, go test | 6200 | 900 | 1687 | 3613 |
+| Rust | stacks/rust, cargo test | 6200 | 900 | 1687 | 3613 |
+| Java | stacks/java, mvn test | 6200 | 900 | 1687 | 3613 |
+| TypeScript | stacks/typescript, npm test | 6200 | 900 | 1687 | 3613 |
 
-Pass rules on the shared cases: attack cases allowed on a sensitive route: 0. Legitimate cases denied (false positives): 0. The five stacks agree on every one of the 5600 cases.
+Pass rules on the shared cases: attack cases allowed on a sensitive route: 0. Legitimate cases denied (false positives): 0. The five stacks agree on every one of the 6200 cases.
 
-The 5600 shared cases are 4700 attack and fraud cases across 7 groups (Web Application 600, API 600, Mobile Application 500, Authentication And Session 700, AI Agent 850, Banking Fraud And Transaction 900, Infrastructure Supply Chain And Insider 550) plus 900 legitimate cases. Money movement scenarios carry the extra weight: payment to a new payee, beneficiary addition followed by a transfer, a stolen token used on the wrong device, a replayed nonce, a signature reused for a different payee or a different amount, overlay or accessibility abuse during payment entry, session hijack before a sensitive action, systematic API probing before a payment attempt, and high value and high rate bursts. New families in this round add cross border payment to a new payee, QR payment to an untrusted merchant, SIM swap followed by a device change, device farm bursts, credential stuffing bursts before a payment, refund abuse, and mule account patterns. The spec v2 families add disbursement diversion to a mule account, approval tampering followed by a legitimate process payment, agent overreach beyond task authorization, indirect prompt injection triggering a payment, mule chain transfers, and record deletion after a transfer.
+The 6200 shared cases are 5300 attack and fraud cases across 7 groups (Web Application 600, API 600, Mobile Application 600, Authentication And Session 800, AI Agent 950, Banking Fraud And Transaction 1100, Infrastructure Supply Chain And Insider 650) plus 900 legitimate cases. Money movement scenarios carry the extra weight: payment to a new payee, beneficiary addition followed by a transfer, a stolen token used on the wrong device, a replayed nonce, a signature reused for a different payee or a different amount, overlay or accessibility abuse during payment entry, session hijack before a sensitive action, systematic API probing before a payment attempt, and high value and high rate bursts. New families in this round add cross border payment to a new payee, QR payment to an untrusted merchant, SIM swap followed by a device change, device farm bursts, credential stuffing bursts before a payment, refund abuse, and mule account patterns. The spec v2 families add disbursement diversion to a mule account, approval tampering followed by a legitimate process payment, agent overreach beyond task authorization, indirect prompt injection triggering a payment, mule chain transfers, and record deletion after a transfer. The newest families add password reset takeover, gift card cash out to a new payee, UPI collect request spoofing, an agent acting beyond scope on a payment carrying embedded invoice instructions, approval tampering combined with a mule chain, and record deletion combined with a disbursement diversion.
 
 Existing suites, unchanged and still passing: BankGuard gateway tests passed, BankGuard finance leak scan passed, BankGuard hostile agent simulation denied 9 hostile attempts and allowed 3 safe ones, HumanGate tests passed, and HumanGate Blocker v2 tested 120 attacks with 120 blocked or challenged and 0 allowed on a sensitive route.
 
@@ -79,7 +79,7 @@ cd ../typescript && npm test
 
 If this project helps you think about agent proof for banking, please star the repository so other builders can find it.
 
-Share it: [X](https://twitter.com/intent/tweet?text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.%20Python%2C%20Go%2C%20Rust%2C%20Java%20and%20TypeScript%2C%205600%20shared%20test%20cases.&url=https://github.com/rohan-fast-code/bankshield-humangate) · [LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https://github.com/rohan-fast-code/bankshield-humangate) · [WhatsApp](https://wa.me/?text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.%20https://github.com/rohan-fast-code/bankshield-humangate) · [Telegram](https://t.me/share/url?url=https://github.com/rohan-fast-code/bankshield-humangate&text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.)
+Share it: [X](https://twitter.com/intent/tweet?text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.%20Python%2C%20Go%2C%20Rust%2C%20Java%20and%20TypeScript%2C%206200%20shared%20test%20cases.&url=https://github.com/rohan-fast-code/bankshield-humangate) · [LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https://github.com/rohan-fast-code/bankshield-humangate) · [WhatsApp](https://wa.me/?text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.%20https://github.com/rohan-fast-code/bankshield-humangate) · [Telegram](https://t.me/share/url?url=https://github.com/rohan-fast-code/bankshield-humangate&text=BankShield%20HumanGate%3A%20an%20open%20source%20gate%20that%20stops%20AI%20agents%20from%20moving%20money%20without%20human%20proof.)
 
 ## Built for real financial services, only when implemented properly
 

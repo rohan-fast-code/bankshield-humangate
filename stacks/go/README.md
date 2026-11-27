@@ -31,7 +31,7 @@ Risk score additions:
 - timing variance below 0.2 seconds with rpm above 20 adds 25
 - overlay abuse 20, new payee 15
 - missing device proof 30, missing device bound token 20
-- spec v2 adds: approval change 25, destination change 50, agent scope 35, prompt injection 45, mule chain 40, record deletion 40 (5600 shared vectors)
+- spec v2 adds: approval change 25, destination change 50, agent scope 35, prompt injection 45, mule chain 40, record deletion 40 (6200 shared vectors)
 - amount is informational only and is never scored
 
 Decision order:

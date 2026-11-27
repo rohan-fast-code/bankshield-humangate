@@ -10,7 +10,8 @@ legitimate false positive.
 
 Cases 1..5000 are the v1 vectors, generated exactly as before and kept
 byte identical. Cases 5001..5600 are the v2 threat-model vectors, appended
-by continuing the same RNG stream.
+by continuing the same RNG stream. Cases 5601..6200 are the v3 vectors,
+six new families appended by continuing the same RNG stream.
 
 Demo only: all signals are synthetic, no real bank data.
 
@@ -312,6 +313,68 @@ def t_record_deletion_after_transfer(rng):
     # rd blocks on a sensitive route
 
 
+# ---- v3 templates for cases 5601..6200. Each returns a single fixed
+# expected decision that follows from docs/GATE_SPEC.md v2 in every branch.
+# No new signal and no new rule is needed: the six families below are new
+# scenario combinations of the existing v1 and v2 signals. The six new
+# signals are written explicitly on every new case, as in the v2 templates.
+
+def t_password_reset_takeover(rng):
+    s = base("sec")
+    if rng.random() < 0.5:
+        vary(s, ac=0, dd=0, ag=0, pi=0, mc=0, rd=0, dm=1)  # rule 1 blocks
+    else:
+        vary(s, ac=0, dd=0, ag=0, pi=0, mc=0, rd=0, sk=0)  # rule 3 blocks
+    return s, "B"
+
+
+def t_gift_card_cashout(rng):
+    s = base(rng.choice(["pay", "trf"]))
+    return vary(s, ac=0, dd=0, ag=0, pi=0, mc=0, rd=0, np=1, dp=0, hl=1,
+                amt=rng.randint(200000, 1500000)), "B"  # score 85:
+    # 15 np + 30 dp + 40 hl, gift card balance cashed out to a new payee
+
+
+def t_upi_collect_spoof(rng):
+    s = base("pay")
+    return vary(s, ac=0, dd=0, ag=0, pi=0, mc=0, rd=0, np=1, ov=1, dp=0,
+                amt=rng.randint(50000, 500000)), "C"  # score 65:
+    # 15 np + 20 ov + 30 dp, spoofed collect request to a new payee
+
+
+def t_agent_invoice_injection(rng):
+    s = base(rng.choice(["pay", "trf"]))
+    return vary(s, ac=0, dd=0, ag=1, pi=1, mc=0, rd=0), "B"  # score 80,
+    # pi blocks on a sensitive route before ag is reached
+
+
+def t_approval_mule_combo(rng):
+    s = base(rng.choice(["pay", "trf"]))
+    return vary(s, ac=1, dd=0, ag=0, pi=0, mc=1, rd=0,
+                amt=rng.randint(200000, 1500000)), "B"  # score 65,
+    # mc blocks on a sensitive route
+
+
+def t_record_deletion_diversion(rng):
+    s = base(rng.choice(["trf", "pay"]))
+    return vary(s, ac=0, dd=1, ag=0, pi=0, mc=0, rd=1,
+                amt=rng.randint(200000, 1500000)), "B"  # score 90,
+    # dd blocks on a sensitive route before rd is reached
+
+
+# Fourth phase: cases 5601..6200, continuing the same rng stream.
+# (group, template, count, expected kind): AUTH password_reset_takeover
+# 100, FRAUD gift_card_cashout 100, MOB upi_collect_spoof 100, AI
+# agent_invoice_injection 100, FRAUD approval_mule_combo 100, INFRA
+# record_deletion_diversion 100.
+V3_PHASE = [("AUTH", t_password_reset_takeover, 100),
+            ("FRAUD", t_gift_card_cashout, 100),
+            ("MOB", t_upi_collect_spoof, 100),
+            ("AI", t_agent_invoice_injection, 100),
+            ("FRAUD", t_approval_mule_combo, 100),
+            ("INFRA", t_record_deletion_diversion, 100)]
+
+
 # Third phase: cases 5001..5600, continuing the same rng stream.
 # (group, template, count, expected kind): FRAUD disbursement_diversion
 # 100, AUTH approval_tampering_stepup 70, AUTH
@@ -502,6 +565,17 @@ def build_cases():
     # First- and second-phase pools, counts, order and rng use are
     # untouched above, so ids 1..5000 are byte identical after regeneration.
     for group, template, count in V2_PHASE:
+        for _ in range(count):
+            signals, expected = template(rng)
+            cases.append({"i": next_id, "g": group, "k": "a",
+                          "t": template.__name__[2:], "s": signals,
+                          "e": expected})
+            next_id += 1
+    # Fourth phase: ids 5601..6200, continuing the same rng stream.
+    # First-, second- and third-phase pools, counts, order and rng use
+    # are untouched above, so ids 1..5600 are byte identical after
+    # regeneration.
+    for group, template, count in V3_PHASE:
         for _ in range(count):
             signals, expected = template(rng)
             cases.append({"i": next_id, "g": group, "k": "a",

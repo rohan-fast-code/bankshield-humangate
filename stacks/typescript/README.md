@@ -92,11 +92,11 @@ npm run typecheck
 
 ## Verified counts
 
-Verified on 25 November 2026 against the expanded shared vector file
-(5,600 cases, spec v2). Final run:
+Verified on 27 November 2026 against the expanded shared vector file
+(6,200 cases, spec v2). Final run:
 
 ```text
-cases=5600 allow=900 challenge=1587 block=3113
+cases=6200 allow=900 challenge=1687 block=3613
 attack_allow_on_sensitive=0
 legit_false_positives=0
 ✔ shared test vectors
