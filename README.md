@@ -7,7 +7,7 @@
 <p align="center"><strong>Stop AI agents from moving money without human proof.</strong></p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/license/rohan-fast-code/bankshield-humangate" alt="MIT license">
+  <img src="https://img.shields.io/github/license/rohan-fast-code/bankshield-humangate" alt="Apache 2.0 or MIT license">
   <img src="https://img.shields.io/github/v/release/rohan-fast-code/bankshield-humangate" alt="Latest release">
   <img src="https://img.shields.io/badge/stacks-Python%20%7C%20Go%20%7C%20Rust%20%7C%20Java%20%7C%20TypeScript-blue" alt="Python, Go, Rust, Java and TypeScript stacks">
   <img src="https://img.shields.io/badge/proof-passkey%20and%20WebAuthn-purple" alt="Passkey and WebAuthn proof">
@@ -19,11 +19,21 @@
   <a href="https://www.producthunt.com/products/bankshield-humangate?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-bankshield-humangate" target="_blank" rel="noopener noreferrer"><img alt="BankShield HumanGate - Stop AI agents from moving money without human proof | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1307761&amp;theme=dark&amp;t=1794061505970"></a>
 </p>
 
+<p align="center"><strong>One gate. Five languages. 6,200 test cases. Zero attacks allowed on a sensitive route.</strong></p>
+
 BankShield HumanGate is an open source, framework agnostic gate that stops AI agents and automated attacks from reaching finance code, account data, and money movement in banking apps and websites.
 
 It does not try to guess whether a visitor is human by looking at a CAPTCHA or a browser string. Modern agents fake those easily. It lets traffic in only when it carries proof that a real human, on a real registered device, with a hardware backed key, intended that exact action.
 
 An agent with copied screens, copied code, a password, or a stolen token cannot produce that proof. So it is stopped at the gate, before it reaches finance code, before it reaches account data, and before it can move money.
+
+## New here? Start here
+
+1. **Run it in two minutes.** Clone the repo and run the two Python commands in [Try it in two minutes](#try-it-in-two-minutes). You will see the gate block 120 attacks and verify all 6,200 shared cases yourself.
+2. **Read the idea in five minutes.** The shared spec is [docs/GATE_SPEC.md](docs/GATE_SPEC.md): one page that explains what the gate checks and why.
+3. **Say hello or pick something to build.** Introduce yourself in [Discussions](https://github.com/rohan-fast-code/bankshield-humangate/discussions), or take one of the five issues labelled `good first issue` and comment on it before you start.
+
+Think you can break the gate? Try. If something gets through, tell us in Discussions. That is the fastest way to make the project better.
 
 ## Why this matters
 
@@ -109,7 +119,7 @@ Even with full UI source, full public API documentation, and a fully decompiled 
 
 We welcome contributions, like REA style open development, but with a defensive mission. Start with CONTRIBUTING.md: it is the onboarding guide, with setup for every stack (Python, Go, Rust, Java, TypeScript), one test command per stack, the contribution paths (new attack cases, language ports, hard review, documentation, benchmarks), how a contribution is reviewed, and the contributor ladder from first time contributor to regular contributor to reviewer. Small first tasks are listed in the repository issues labelled good first issue, each with the files involved and how it is verified.
 
-If you are interested online, vetting happens first. See docs/CONTRIBUTOR_VETTING.md. We check your GitHub profile properly: are you actively contributing, where are you contributing, what are your contributions, and have you contributed to REA, official repo morluto/rea, or not, with exact links verified. Only after vetting do we send the contributor form, and that form is given by the maintainer later, see docs/CONTRIBUTOR_FORM.md. No form is sent before vetting, and no form link is invented here. To introduce yourself, open an issue in the repository and use the contributor interest template.
+If you are interested online, vetting happens first. See docs/CONTRIBUTOR_VETTING.md. We check your GitHub profile properly: are you actively contributing, where are you contributing, what are your contributions, and have you contributed to REA, official repo morluto/rea, or not, with exact links verified. Only after vetting do we send the contributor form, and that form is given by the maintainer later, see docs/CONTRIBUTOR_FORM.md. No form is sent before vetting, and no form link is invented here. To introduce yourself, open an issue in the repository and use the contributor interest template, or say hello in [Discussions](https://github.com/rohan-fast-code/bankshield-humangate/discussions).
 Good first contributions: add a new attack case with a test signal and the expected decision, add a standalone hard rule unit test in TypeScript or Rust, fix a benchmark, or improve docs. See the open issues labelled good first issue for the current list.
 All contributions need tests. A new attack type without a test will not be merged. Vectors must still pass identically in all five stacks, and no decision may change without a spec change. A change to finance related code, if it ever appears, needs a human finance owner review.
 
@@ -123,7 +133,7 @@ Licensed under the Apache License 2.0 OR the MIT License. Pick either one. See L
 
 ## Topics for GitHub
 
-banking, security, fintech, ai agents, reverse engineering, app security, api security, mobile security, passkeys, webauthn, fraud prevention, open source, python, spring boot, mcp, agent security, owasp
+banking, security, fintech, ai agents, reverse engineering, app security, api security, mobile security, passkeys, webauthn, fraud prevention, open source, python, spring boot, mcp, agent security, owasp, hacktoberfest, openssf
 
 ## Acknowledgement
 
